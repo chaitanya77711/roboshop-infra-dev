@@ -1,0 +1,11 @@
+locals {
+   ami_id = data.aws_ami.RoboShop.id
+   common_tags = {
+        project = var.project
+        environment = var.environment
+        terraform = true 
+   }
+   data-base_subnet_id =  split (",",data.aws_ssm_parameter.data-base_subnet_ids.value)[0]
+   mongodb_sg_id = data.aws_ssm_parameter.mongodb_sg_id.value
+
+}
