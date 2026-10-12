@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 component=$1
 dnf install ansible -y
 
