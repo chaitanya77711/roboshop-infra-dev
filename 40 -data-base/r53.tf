@@ -12,6 +12,6 @@ resource "aws_route53_record" "redis" {
   name    = "redis-${var.environment}-${var.Name}"
   type    = "A"
   ttl     = 1
-  records = [aws_instance.redis.public_ip]
+  records = [aws_instance.redis.private_ip]
   allow_overwrite = true
 }
