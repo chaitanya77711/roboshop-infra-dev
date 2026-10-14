@@ -20,7 +20,7 @@ resource "aws_iam_role" "mysql_pass" {
     {
        Name = local.mysql_pass
     },
-    local.local.common_tags
+    local.common_tags
   )
 }
 
@@ -37,5 +37,5 @@ resource "aws_iam_role_policy_attachment" "mysql_policy_attach" {
 
 resource "aws_iam_instance_profile" "mysql" {
   name = "${var.project}-${var.environment}-mysql"
-  role = aws_iam_role.mysql.name
+  role = aws_iam_role.mysql_policy_attach.name
 }
