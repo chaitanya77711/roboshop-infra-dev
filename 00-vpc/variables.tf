@@ -1,6 +1,6 @@
 variable "project" {
     type = string
-    default = "Roboshop-vpc-demo"
+    default = "Roboshop"
 }
 
 variable "environment" {

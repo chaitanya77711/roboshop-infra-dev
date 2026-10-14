@@ -1,5 +1,5 @@
 variable "project" {
-  default = "Roboshop-vpc-demo"
+  default = "Roboshop"
 }
 
 variable "environment" {
