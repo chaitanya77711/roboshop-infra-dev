@@ -13,4 +13,7 @@ locals {
    mysql_pass = join("-", [
             for name in ["${var.project}","${var.environment}", "mysql"] : title(name)
              ])
+   mysql_policy =  join("-", [
+            for name in ["${var.project}","${var.environment}", "mysql"] : title(name)
+             ])         
 }

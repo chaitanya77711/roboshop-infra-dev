@@ -25,9 +25,11 @@ resource "aws_iam_role" "mysql_pass" {
 }
 
 resource "aws_iam_policy" "mysql_pass_polcy" {
-  name        = "s3-read-access-policy"
+  name        = local.mysql_policy
   description = "a policy for mysql pass"
-  policy      = file("mysql-pass.json")
+  policy      = templatefile("mysql-pass.json", {
+                environment = var.environment 
+  })
 }
 
 resource "aws_iam_role_policy_attachment" "mysql_policy_attach" {
